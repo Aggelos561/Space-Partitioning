@@ -3,6 +3,7 @@ from scipy.spatial import cKDTree
 
 # Complexity O(nlogn)
 
+
 class Kd_tree():
 
     def __init__(self, points):
