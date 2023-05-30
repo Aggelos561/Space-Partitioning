@@ -21,7 +21,7 @@ class Kd_tree():
 
         rect_tree = cKDTree([lower_left_p, upper_right_p])
 
-        indices = self.kdtree.query_ball_tree(rect_tree, r=float('inf'))
+        indices = self.kdtree.query_ball_tree(rect_tree, r=1)
 
         flattened_indices = [index for sublist in indices for index in sublist]
 
@@ -56,18 +56,18 @@ if __name__ == '__main__':
 
     # Search Nearest Neighbor Point Using KD-Tree
 
-    # points = gen_random_points(50)
+    points = gen_random_points(50)
 
-    # kdtree = Kd_tree(points)
+    kdtree = Kd_tree(points)
 
-    # kdtree.build()
+    kdtree.build()
 
-    # query_point = gen_random_points(1)[0]
+    query_point = gen_random_points(1)[0]
 
-    # distance, nearest_point = kdtree.query(query_point)
+    distance, nearest_point = kdtree.query(query_point)
 
-    # print(f'Query point: {query_point}')
-    # print(f'Nearest Neighbor: {nearest_point}, distance: {distance}\n')
+    print(f'Query point: {query_point}')
+    print(f'Nearest Neighbor: {nearest_point}, distance: {distance}\n')
 
 
     # Rectangle Search Using KD-Tree
