@@ -31,6 +31,9 @@ class Kd_tree:
 
         if space_size == 1:
             return Node(space_points[0])
+        
+        if not space_size:
+            return None
 
         space_points.sort(key=lambda p: p[depth % 2])
 
@@ -50,6 +53,9 @@ class Kd_tree:
 
 
     def __construct(self):
+
+        if not len(self.points):
+            return
 
         self.points.sort(key=lambda p: p[0])
 
@@ -101,6 +107,10 @@ class Kd_tree:
 
 
     def plot_rectangle(self, lower_left_p, upper_right_p, points_ins_rect):
+
+        if not len(self.points):
+            return
+        
         fig, ax = plt.subplots()
 
         x = [point[0] for point in self.points]
