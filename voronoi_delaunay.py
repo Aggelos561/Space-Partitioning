@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 from scipy.spatial import Delaunay, Voronoi, voronoi_plot_2d
-from helper import gen_random_points
+from genpoints import gen_random_points
 
 
 points = gen_random_points(20)
