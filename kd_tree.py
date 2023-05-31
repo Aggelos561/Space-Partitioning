@@ -136,10 +136,11 @@ if __name__ == '__main__':
 
     # Building kd-tree
     kdtree.build()
-    
+
     # Search in rectangle
     lower_left_p, upper_right_p = (30, 20), (70, 60)
 
     inside_rect = kdtree.search_rectangle(lower_left_p, upper_right_p)
 
+    # Visualize rectangle
     kdtree.plot_rectangle(lower_left_p, upper_right_p, inside_rect)
