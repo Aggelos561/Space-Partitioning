@@ -1,15 +1,15 @@
 import matplotlib.pyplot as plt
 
 
-class Node:
-
-    def __init__(self, point):
-        self.point = point
-        self.left = None
-        self.right = None
-
-
 class Kd_tree:
+
+    class Node:
+
+        def __init__(self, point):
+            self.point = point
+            self.left = None
+            self.right = None
+
 
     def __init__(self, points):
         self.points = points
@@ -30,7 +30,7 @@ class Kd_tree:
         space_size = len(space_points)
 
         if space_size == 1:
-            return Node(space_points[0])
+            return self.Node(space_points[0])
         
         if not space_size:
             return None
@@ -39,7 +39,7 @@ class Kd_tree:
 
         middle_index = self.__get_middle_index(space_points)
         
-        node = Node(space_points[middle_index])
+        node = self.Node(space_points[middle_index])
         
         left_points, right_points = self.__split_space(space_points)
 
@@ -61,7 +61,7 @@ class Kd_tree:
 
         left_points, right_points = self.__split_space(self.points)
 
-        self.root = Node(self.points[self.__get_middle_index(self.points)])
+        self.root = self.Node(self.points[self.__get_middle_index(self.points)])
         self.root.left = self.__construct_space(left_points, 1)
         self.root.right = self.__construct_space(right_points, 1)
 
