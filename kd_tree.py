@@ -152,5 +152,7 @@ if __name__ == '__main__':
 
     inside_rect = kdtree.search_rectangle(lower_left_p, upper_right_p)
 
+    print(f'Points inside rectangle: {inside_rect}')
+
     # Visualize rectangle
     kdtree.plot_rectangle(lower_left_p, upper_right_p, inside_rect)
